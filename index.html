@@ -61,23 +61,19 @@
             <form class="form-signin">
                <div class="text-center mb-4">
                   <img class="mb-4" src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-                  <h1 class="h3 mb-3 font-weight-normal">Commandr</h1>
-                  <p>The command you are looking for.</a></p>
+                  <!--<h1 class="h3 mb-3 font-weight-normal">Commandr</h1>
+                  <p>The command you are looking for.</a></p>-->
                </div>
 
                <div class="terminal text-left">
-                  <div id="typed-strings">
-                     <p>Typed.js is a <strong>JavaScript</strong> library.</p>
-                     <p>It <em>types</em> out sentences.</p>
-                  </div>
-                  <span id="typed">test</span>
+                  <div id="typed"></div>
                </div>
 
                <script>
-                  var typed = new Typed('#typed', {
-                    stringsElement: '#typed-strings',
-                    typeSpeed: 40
-                  });
+                 var typed = new Typed('#typed', {
+                   strings: ['▲ ~ # Commandr turns text into Linux commands.^500<br/>▲ ~ # Built with OpenAI using GTP-3.<br/>^1000`pushed to origin with option force`'],
+                   typeSpeed: 20
+                 });
                </script>
 
                <!--<div class="form-label-group">
@@ -89,7 +85,6 @@
                <p class="mt-5 mb-3 text-muted text-center">Made with ❤️ by
                  <a href="https://twitter.com/super3">Shawn</a> and
                  <a href="#">Tome</a>.
-                 Built with <a href="https://openai.com/">OpenAI</a> using GTP-3.
                </p>
             </form>
           </div>
