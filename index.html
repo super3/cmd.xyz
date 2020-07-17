@@ -44,12 +44,15 @@
            padding: 20px;
            border-radius: .3rem;
            margin-bottom: 1rem;
-           min-height: 300px;
+           min-height: 380px;
          }
          .btn-signup {
            padding: 10px 40px;
            font-weight: bold;
            margin-top: 10px;
+         }
+         .highlight {
+           color: red;
          }
       </style>
       <!-- Custom styles for this template -->
@@ -66,15 +69,30 @@
                </div>
 
                <div class="terminal text-left">
-                  <div id="typed"></div>
+                  <div id="typed-strings">
+                    <p>
+                      ~ # Commandr turns text into Linux commands.^500 <br/>
+                      ~ # Built with OpenAI using GTP-3. <br/><br/>
+                      ~ # ^500 <span class="highlight">commandr</span> ^1000 create a directory named foo, and enter it <br/>
+                      ~ # mkdir foo; cd foo; <br/>
+                      ~ # ^500 <span class="highlight">commandr</span> ^1000 create three files named bar1.txt to bar3.txt <br/>
+                      ~ # touch bar1.txt; bar2.txt; bar3.txt; <br/>
+                      ~ # ^500 <span class="highlight">commandr</span> ^1000 list files in this directory <br/>
+                      ~ # ls <br/>
+                      ~ # bar1.txt  bar2.txt  bar3.txt <br/><br/>
+
+                      ~ # Command Linux instead of looking for Linux commands.
+                    </p>
+                  </div>
+                  <span id="typed"></span>
                </div>
 
                <script>
-                 var typed = new Typed('#typed', {
-                   strings: ['▲ ~ # Commandr turns text into Linux commands.^500<br/>▲ ~ # Built with OpenAI using GTP-3.<br/>^1000`pushed to origin with option force`'],
-                   typeSpeed: 20
-                 });
-               </script>
+                var typed = new Typed('#typed', {
+                  stringsElement: '#typed-strings',
+                  typeSpeed: 20
+                });
+              </script>
 
                <!--<div class="form-label-group">
                   <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
