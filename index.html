@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Jekyll v4.0.1">
+      <title>Floating labels example · Bootstrap</title>
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/floating-labels/">
+      <!-- Bootstrap core CSS -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+      <style>
+          body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: black;
+            color: #ddd;
+          }
+         .bd-placeholder-img {
+           font-size: 1.125rem;
+           text-anchor: middle;
+           -webkit-user-select: none;
+           -moz-user-select: none;
+           -ms-user-select: none;
+           user-select: none;
+         }
+         @media (min-width: 768px) {
+           .bd-placeholder-img-lg {
+           font-size: 3.5rem;
+           }
+         }
+         .terminal {
+           background-color: #191724;
+           color: white;
+           font-family: "source code pro";
+           font-size: 18px;
+           padding: 20px;
+           border-radius: .3rem;
+           margin-bottom: 1rem;
+           min-height: 300px;
+         }
+         .btn-signup {
+           padding: 10px 40px;
+           font-weight: bold;
+           margin-top: 10px;
+         }
+      </style>
+      <!-- Custom styles for this template -->
+   </head>
+   <body>
+      <div class="container">
+        <div class="row justify-content-center mt-5">
+          <div class="col-8 text-center">
+            <form class="form-signin">
+               <div class="text-center mb-4">
+                  <img class="mb-4" src="https://getbootstrap.com/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                  <h1 class="h3 mb-3 font-weight-normal">Commandr</h1>
+                  <p>The command you are looking for.</a></p>
+               </div>
+
+               <div class="terminal text-left">
+                  <div id="typed-strings">
+                     <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+                     <p>It <em>types</em> out sentences.</p>
+                  </div>
+                  <span id="typed">test</span>
+               </div>
+
+               <script>
+                  var typed = new Typed('#typed', {
+                    stringsElement: '#typed-strings',
+                    typeSpeed: 40
+                  });
+               </script>
+
+               <!--<div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email address</label>
+                  </div>-->
+
+               <button class="btn btn-lg btn-light btn-signup" type="submit">Sign Up</button>
+               <p class="mt-5 mb-3 text-muted text-center">Made with <3 by @super3</p>
+            </form>
+          </div>
+        </div>
+      </div>
+   </body>
+</html>
