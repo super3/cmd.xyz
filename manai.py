@@ -5,17 +5,17 @@ from config import *
 openai.api_key = api_key
 
 prompt = """
-Q: list files in a directory
+Q: list files
 > ls
 
-Q: delete a file named bar.txt
-> rm bar.txt
+Q: list files including hidden files
+> ls -a
 
-Q: create a new directory named foo
-> mkdir foo
+Q: list files and sort files by size
+> ls -lS
 
-Q: create a file named test.txt with the colors of the rainbow
-> echo "red orange yellow green blue indigo violet" > test.txt
+Q: list files in reverse order
+> ls -r
 
 """
 
