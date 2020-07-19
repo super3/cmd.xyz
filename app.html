@@ -45,7 +45,6 @@
            font-size: 18px;
            border-radius: .3rem;
            height: 380px;
-           padding: 20px;
            overflow-y: hidden;
            word-wrap: break-word;
            word-break: normal;
@@ -53,11 +52,27 @@
          .terminal pre {
            font-family: Source Code Pro;
            color: white;
-           height: 304px;
+           height: 324px;
+           padding: 20px;
            overflow-y: scroll;
            word-wrap: break-word;
            word-break: normal;
+           margin-bottom: 0;
          }
+         .terminal pre::-webkit-scrollbar-track {
+           -webkit-box-shadow: none;
+           border-radius: 10px;
+           background-color: none;
+          }
+          .terminal pre::-webkit-scrollbar {
+            width: 12px;
+            background-color: none;
+          }
+          .terminal pre::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #252332;
+          }
          .btn-signup {
            padding: 10px 40px;
            font-weight: bold;
