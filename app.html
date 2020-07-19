@@ -68,14 +68,26 @@
          .highlight {
            color: red;
          }
-         #usr_prompt {
+         .input-group {
            font-family: "Source Code Pro";
            position: relative;
            bottom: 64px;
            background: none;
            border: 0;
            outline: 0;
-           padding: 20px;
+           /* padding: 20px; */
+           color: #fff;
+         }
+         .input-group-text {
+           background: none;
+           color: #fff;
+           border: 0;
+           padding: 0;
+           padding-left: 20px;
+         }
+         #usr_prompt {
+           background: none;
+           border: 0;
            color: #fff;
          }
          #usr_prompt:focus {
@@ -100,7 +112,12 @@
                   </div>
                   <span id="typed"></span>
                </div>
-               <input id="usr_prompt" class="form-control" placeholder="type some command text and press enter" v-model="input" v-on:keydown.enter="getCommand">
+               <div class="input-group">
+                 <div class="input-group-prepend">
+                  <span class="input-group-text">></span>
+                </div>
+                <input id="usr_prompt" class="form-control" placeholder="type some command text and press enter" v-model="input" v-on:keydown.enter="getCommand">
+               </div>
 
                <p class="mt-5 mb-3 text-muted text-center">Made with ❤️ by
                  <a href="https://twitter.com/super3">Shawn</a>,
