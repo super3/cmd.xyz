@@ -15,7 +15,6 @@
       <!-- Bootstrap core CSS -->
       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
       <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
       <style>
           body {
             display: -ms-flexbox;
@@ -50,6 +49,9 @@
            margin-bottom: 1rem;
            min-height: 380px;
          }
+         .terminal pre {
+           color: white;
+         }
          .btn-signup {
            padding: 10px 40px;
            font-weight: bold;
@@ -62,36 +64,63 @@
       <!-- Custom styles for this template -->
    </head>
    <body>
-      <div class="container">
+      <div class="container" id="app">
         <div class="row justify-content-center mt-5">
           <div class="col-8 text-center">
-            <form class="form-signin">
+            <div class="form-signin">
                <div class="text-center mb-2">
                   <img class="mb-4" src="logo.png" alt="" width="115">
                </div>
 
                <div class="terminal text-left">
                   <div id="typed-strings">
-                    <p>> test</p>
+                    <pre>{{history}}</pre>
                   </div>
                   <span id="typed"></span>
                </div>
 
                <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                  <label for="inputEmail">Email address</label>
+                  <input id="usr_prompt" class="form-control" placeholder="type some command text and press enter" v-model="input" v-on:keydown.enter="getCommand">
                </div>
-
-               <a href="https://forms.gle/bUpSFLdLBFop9WhKA"class="btn btn-lg btn-light btn-signup" type="submit">Sign Up</a>
 
                <p class="mt-5 mb-3 text-muted text-center">Made with ❤️ by
                  <a href="https://twitter.com/super3">Shawn</a>,
                  <a href="https://github.com/boshevski">Tome</a>, and
                  <a href="http://avady.net">Mikhail</a>
                </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+      <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          input: '',
+          history: ''
+        },
+        methods: {
+          async getCommand() {
+            const input = this.input;
+            this.input = '';
+
+            this.history += input + '\n';
+
+            const {data} = await axios.get('http://localhost:5000', {
+              params: {
+                input
+              }
+            });
+
+            this.history += data.output.trim() + '\n';
+          }
+        }
+      })
+      </script>
+
    </body>
 </html>
