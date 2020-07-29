@@ -17,6 +17,12 @@ Q: list files and sort files by size
 Q: list files in reverse order
 > ls -r
 
+Q: change directory to home directory
+> cd ~
+
+Q: create a directory (folder)
+> mkdir /path_here> mkdir /directory_name/here
+
 """
 
 from flask import Flask, escape, request, jsonify
